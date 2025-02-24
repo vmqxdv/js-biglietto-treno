@@ -1,17 +1,10 @@
-- Mostra prompt "Quanti km devi percorrere?"
-  - Collezionare l'input in una costante `travelLenght`
+- Mostra prompt "Quanti km devi percorrere?" e convertire input in numeri, e collezionalo in costante `travelLenght`
+- Mostra prompt "Quanti anni hai?" e convertire input in numeri, e collezionalo in costante `userAge`
 
-- Mostra prompt "Quanti anni hai?"
-  - Collezionare l'input in una costante `userAge`
+- Dichiaro costante `discountCalc`, con il caclolo dello sconto da applicare in base all'età
 
-- Calcolare il prezzo del biglietto in base ai km
-  - Dichiato variabile `let = travelPriceRaw;`
-  - Collezionare il risultato di `travelLenght * 0.21` nella variabile `travelPriceRaw`
+- Dichiaro costante `travelPriceRaw` moltiplicando `travelLenght` per 0.21
+- Dichiaro costante `travelPriceFinal` arrotondando il risultato dell'operazione `travelPriceRaw * discountCalc`, tramite funzione `roundToTwo`
 
-  - Se `userAge` è minore di 18 applicare sconto di 20%
-    - Modifico la costante `travelPriceRaw` con il risultato
-  - Altrimenti se `userAge` è maggiore di 65 applicare sconto del 40%
-    - Modifico la costante `travelPriceRaw` con il risultato
+- Mostro il risultato all'utente tramite `alert`
 
-  - Arrotondare il prezzo finale nella costante `travelPriceFinal`
-  - Ritornare `travelPriceFinal` 
