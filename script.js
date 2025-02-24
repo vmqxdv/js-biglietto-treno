@@ -1,15 +1,9 @@
 try {
   const travelLenght = Number(prompt('Quanti km devi percorrere?'));
-  if (Math.sign(travelLenght) === -1 || isNaN(travelLenght)) {
-    alert(`"${travelLenght}" non è un valore valido. Perfavore inserisci un numero positivo.`);
-    throw new Error(`[travelLenght] Input "${travelLenght}" non valido`);
-  };
-  
+  getValidInput(travelLenght, 0.01);
+
   const userAge = Number(prompt('Quanti anni hai?'));
-  if (Math.sign(userAge) === -1 || isNaN(userAge) || userAge > 200) {
-    alert(`"${travelLenght}" non è un valore valido. Perfavore inserisci un numero positivo, e realistico.`);
-    throw new Error(`[userAge] Input "${travelLenght}" non valido`);
-  };
+  getValidInput(userAge, 1, 200);
 
   const discountCalc = 
   userAge < 18 ? 0.8 :
@@ -27,4 +21,13 @@ try {
 
 function roundToTwo(num) {
   return parseFloat(num.toFixed(2)); 
+};
+
+function getValidInput(input, min, max) {
+  if (isNaN(input) || input < min || (max !== undefined && input > max)) {
+    alert(`"${input}" non è un valore valido. Per favore, inserisci un numero positivo${max !== undefined ? ` e realistico (fino a ${max})` : ''}.`);
+    throw new Error(`[Input] "${input}" non valido`);
+  };
+
+  return input;
 };
