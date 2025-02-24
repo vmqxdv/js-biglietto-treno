@@ -28,6 +28,4 @@ function getValidInput(input, min, max) {
     alert(`"${input}" non è un valore valido. Per favore, inserisci un numero positivo${max !== undefined ? ` e realistico (fino a ${max})` : ''}.`);
     throw new Error(`[Input] "${input}" non valido`);
   };
-
-  return input;
 };
