@@ -12,3 +12,6 @@
     - Modifico la costante `travelPriceRaw` con il risultato
   - Altrimenti se `userAge` è maggiore di 65 applicare sconto del 40%
     - Modifico la costante `travelPriceRaw` con il risultato
+
+  - Arrotondare il prezzo finale nella costante `travelPriceFinal`
+  - Ritornare `travelPriceFinal` 
