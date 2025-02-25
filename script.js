@@ -11,7 +11,7 @@ try {
   1;
   
   const travelPriceRaw = travelLenght * 0.21;
-  const travelPriceFinal = roundToTwo(travelPriceRaw * discountCalc);
+  const travelPriceFinal = travelPriceRaw * discountCalc;
   
   const formattedTravelPriceFinal = new Intl.NumberFormat('it-IT', {
     style: 'currency',
@@ -21,11 +21,6 @@ try {
   alert(`Il prezzo del tuo biglietto è di ${formattedTravelPriceFinal}`);
 } catch(err) {
   console.log(err);
-};
-
-
-function roundToTwo(num) {
-  return parseFloat(num.toFixed(2)); 
 };
 
 function getValidInput(input, min, max) {
