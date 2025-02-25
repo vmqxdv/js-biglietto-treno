@@ -5,7 +5,7 @@ try {
   const userAge = Number(prompt('Quanti anni hai?'));
   getValidInput(userAge, 1, 200);
 
-  const discountCalc = 
+  const discountCalc = // ternari
   userAge < 18 ? 0.8 :
   userAge > 65 ? 0.6 :
   1;
@@ -13,7 +13,12 @@ try {
   const travelPriceRaw = travelLenght * 0.21;
   const travelPriceFinal = roundToTwo(travelPriceRaw * discountCalc);
   
-  alert(`Il prezzo del tuo biglietto è di €${travelPriceFinal}`);
+  const formattedTravelPriceFinal = new Intl.NumberFormat('it-IT', {
+    style: 'currency',
+    currency: 'EUR'
+  }).format(travelPriceFinal);
+
+  alert(`Il prezzo del tuo biglietto è di ${formattedTravelPriceFinal}`);
 } catch(err) {
   console.log(err);
 };
